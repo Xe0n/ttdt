@@ -1,0 +1,138 @@
+.logo img{
+    width: 100%;
+    max-width: 200px;
+    @include xs{
+        max-height: 100px;
+        width: auto;
+    }
+}
+.link-font{
+    font-family: 'Overpass Mono', monospace;
+}
+.white-link, .mobile-menu-link{
+    color: white;
+    text-transform: uppercase;
+    &:hover, &:focus{
+        text-decoration: underline;
+        color: white;
+        font-weight: 900;
+    }
+}
+.mobile-menu-link:hover {
+    text-decoration: none;
+}
+.nav-link:hover{
+    color: unset;
+}
+.mobile-menu-link{
+  a{
+      color: white;
+      padding: 0;
+      margin: 0;
+        
+      &::before{
+          content: unset !important;
+      }
+  }  
+}
+.menu{
+    position: relative;
+    .nav-link, .link-font{
+        padding: 0.5rem 0rem;
+        color: black;
+        text-transform: uppercase;
+        text-decoration: underline;
+        font-family: 'Overpass Mono', monospace;
+
+        &:hover{
+            cursor: pointer;
+            font-weight: 900;
+            text-decoration: none;
+        }
+        
+    }
+    .dropdown-toggle::after{
+        content: unset;
+    }
+    .dropdown-menu{
+        width: 100vh; 
+        transform: translate(0px, 82px) !important; 
+        inset: 0px auto auto 0px !important;   
+        border: unset; 
+    }
+    .dropdown-item{
+        font-family: 'Overpass Mono', monospace;
+    }
+    .dropdown-item:focus, .dropdown-item:hover{
+        background-color: unset;
+        text-decoration: underline;
+    }
+    .dropdown{
+        position: unset;
+    }
+   /* @include md{
+        display: none;
+    }*/
+}
+.parent-menu{
+    position: relative;
+    .second-menu{
+        display: none;
+        background-color: $white;
+        width: 90%;
+    }
+    
+}
+.parent-menu.visible{
+    .second-menu{
+        display: block;
+        position: absolute;
+        top: 50px;
+    }
+}
+.sab-menu{
+    width: 200px;
+    height: 200px;
+    background-color: $secondColor;
+    font-size: 14px;
+    .row{
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        color: $white;
+        @include sm{
+            height: 75px;
+            line-height: 75px;
+            font-size: 12px;
+        }
+         @include xs{
+             height: 50px;
+             line-height: 50px;
+             font-size: 11px; 
+         }
+    }
+    img{
+        height: 30px;
+
+        @include sm{
+            height: 20px;
+        }
+        @include xs{
+            height: 15px;
+        }
+
+    }
+    .dropdown-menu{
+        border: unset;
+        border-radius: unset;
+    }
+    @include sm{
+        width: 150px;
+        height: 150px;
+    }
+    @include xs{
+        width: 100px;
+        height: 100px;  
+    }
+    
+}

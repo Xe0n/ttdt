@@ -1,0 +1,17 @@
+@import 'variables';
+@import 'libs/normalize';
+@import 'fonts';
+@import 'breakpoints';
+@import 'mixins';
+
+@import 'components/all';
+@import 'pages/all';
+
+
+body{
+    background-color: $bodyColor;
+    padding: 25px 50px;
+    @include sm{
+        padding: 10px 10px;
+    }
+}
