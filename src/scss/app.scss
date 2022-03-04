@@ -15,3 +15,23 @@ body{
         padding: 10px 10px;
     }
 }
+h1{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    @include xl{
+        font-size: 40px;
+    }
+    @include lg{
+        font-size: 30px;
+    }
+    @include xs{
+        font-size: 20px;
+    }
+}
+h3{
+    font-weight: 300;
+}
+.mt-50{
+    margin-top: 100px;
+}

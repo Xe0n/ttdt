@@ -1,0 +1,16 @@
+.btn-default{
+	padding: 5px 50px;
+	background-color: $main;
+	text-transform: uppercase;
+	&:hover{
+		opacity: .7;
+	}
+	span{
+		color: $white;
+		font-size: 30px;
+		font-weight: 300;
+		@include lg{
+			font-size: 25px;
+		}
+	}
+}
