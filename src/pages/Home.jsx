@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, CurrentShow } from '../components'
+import { Button, CurrentShow, NewsList } from '../components'
 import { Navigation, Pagination } from 'swiper'
 
 import teatr from '../assets/img/teatr.png'
@@ -36,6 +36,30 @@ function Home() {
             }
         ]
     }
+    const News = {
+        items: [
+            {
+                id: 1,
+                img: 'http://театр-туймазы.рф/images/gallery/php4VmLbn.jpg',
+                name: 'Коллектив театра подарил зрителям спектакль «Маленький принц»'
+            },
+            {
+                id: 2,
+                img: 'http://театр-туймазы.рф/images/gallery/phprcote1.jpg',
+                name: 'Туймазинский театр получил грант на приглашение театрального критика'
+            },
+            {
+                id: 3,
+                img: 'http://театр-туймазы.рф/images/gallery/phpbvKLJp.jpg',
+                name: 'Поздравляем!'
+            },
+            {
+                id: 4,
+                img: 'http://театр-туймазы.рф/images/gallery/phpio6GrV.jpg',
+                name: 'Невосполнимая утрата'
+            }
+        ]
+    }
     return (
         <>
             <div class="container-fluid home-slide">
@@ -63,6 +87,12 @@ function Home() {
                 <div class="row">
                     <h3>В этом месяце</h3>
                     <CurrentShow items={ShowList} />
+                </div>
+            </div>
+            <div class="container-fluid mt-50">
+                <div class="row">
+                    <h3>Новости</h3>
+                    <NewsList items={News} />
                 </div>
             </div>
         </>
