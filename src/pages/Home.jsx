@@ -1,9 +1,27 @@
 import React from 'react'
-import { Button, CurrentShow, NewsList } from '../components'
+import { Button, CurrentShow, NewsList, Partner } from '../components'
 import { Navigation, Pagination } from 'swiper'
+import axios from 'axios'
 
 import teatr from '../assets/img/teatr.png'
 function Home() {
+    const [news, setNews] = React.useState([])
+    const [isLoading, setIsLoading] = React.useState(true)
+
+    React.useEffect(() => {
+        async function getData() {
+            try {
+                const [newsResponse] = await Promise.all([axios.get('http://xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/news')])
+                setIsLoading(false)
+                setNews(newsResponse.data)
+
+            } catch (error) {
+                alert('Ошибка при запросе данных ;(')
+                console.error(error)
+            }
+        }
+        getData()
+    }, [])
     const ShowList = {
         show: [
             {
@@ -36,27 +54,35 @@ function Home() {
             }
         ]
     }
-    const News = {
+    const Partners = {
         items: [
             {
                 id: 1,
-                img: 'http://театр-туймазы.рф/images/gallery/php4VmLbn.jpg',
-                name: 'Коллектив театра подарил зрителям спектакль «Маленький принц»'
+                img: 'http://театр-туймазы.рф/images/banners/work_russia.png'
             },
             {
                 id: 2,
-                img: 'http://театр-туймазы.рф/images/gallery/phprcote1.jpg',
-                name: 'Туймазинский театр получил грант на приглашение театрального критика'
+                img: 'http://театр-туймазы.рф/images/banners/brand-01.svg'
             },
             {
                 id: 3,
-                img: 'http://театр-туймазы.рф/images/gallery/phpbvKLJp.jpg',
-                name: 'Поздравляем!'
+                img: 'http://театр-туймазы.рф/images/banner-133x133.png'
             },
             {
                 id: 4,
-                img: 'http://театр-туймазы.рф/images/gallery/phpio6GrV.jpg',
-                name: 'Невосполнимая утрата'
+                img: 'http://театр-туймазы.рф/images/banners/banner2020.png'
+            },
+            {
+                id: 5,
+                img: 'http://театр-туймазы.рф/images/er_ogo.png'
+            },
+            {
+                id: 6,
+                img: 'http://театр-туймазы.рф/images/banners/banner2020.png'
+            },
+            {
+                id: 7,
+                img: 'http://театр-туймазы.рф/images/banners/kmrb.png'
             }
         ]
     }
@@ -92,7 +118,23 @@ function Home() {
             <div class="container-fluid mt-50">
                 <div class="row">
                     <h3>Новости</h3>
-                    <NewsList items={News} />
+                    <NewsList items={news} />
+                </div>
+            </div>
+            <div class="container-fluid mt-50">
+                <div class="row">
+                    <h3>Наши друзья</h3>
+                    <Partner items={Partners} />
+                </div>
+            </div>
+            <div class="container-fluid mt-50">
+                <div className="row justify-content-between">
+                    <div className="col-md-10">
+                        <h3>Следите за нами в инстаграмме</h3>
+                    </div>
+                    <div className="col-md-2 text-end">
+                        <a href="">Перейти</a>
+                    </div>
                 </div>
             </div>
         </>

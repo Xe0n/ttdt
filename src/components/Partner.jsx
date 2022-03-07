@@ -3,17 +3,13 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from "swiper"
 import 'swiper/css'
 
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+const Partner = (props) => {
 
-const NewsList = ({ items }) => {
-
-	const divStyle = (src) => ({
-		height: '500px',
-		backgroundImage: `url( ${src} )`,
-		backgroundSize: 'cover',
-		backgroundRepeat: 'no-repeat'
+	const partners = props.items.items
+	const divStyle = () => ({
+		height: '100px',
+		width: '100%'
 	})
-
 	return (
 		<>
 			<div class="row mt-5">
@@ -35,11 +31,11 @@ const NewsList = ({ items }) => {
 							spaceBetween: 20
 						},
 						768: {
-							slidesPerView: 4,
+							slidesPerView: 6,
 							spaceBetween: 40
 						},
 						1024: {
-							slidesPerView: 4,
+							slidesPerView: 7,
 							spaceBetween: 50
 						}
 					}}
@@ -48,14 +44,11 @@ const NewsList = ({ items }) => {
 
 				>
 
-					{items.map((obj) => (
-						<SwiperSlide key={obj.id}>
+					{partners.map(partnerlist => (
+						<SwiperSlide key={partnerlist.id}>
 							<div>
-								<div style={divStyle(obj.img)}>
-
-								</div>
-								<div className="mt-3">
-									<h6>{obj.title}</h6>
+								<div class="text-center">
+									<img src={partnerlist.img} style={divStyle()} alt="" />
 								</div>
 							</div>
 						</SwiperSlide>
@@ -67,4 +60,4 @@ const NewsList = ({ items }) => {
 	)
 }
 
-export default NewsList
+export default Partner

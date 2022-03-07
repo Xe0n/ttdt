@@ -1,5 +1,5 @@
 import logo from './logo.svg'
-import { Header } from './components'
+import { Header, Footer } from './components'
 import { Home } from './pages'
 import {
   Route,
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} exact />
       </Routes>
-
+      <Footer />
     </div>
   )
 }
