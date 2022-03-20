@@ -1,6 +1,6 @@
 import logo from './logo.svg'
 import { Header, Footer } from './components'
-import { Home } from './pages'
+import { Home, Show } from './pages'
 import {
   Route,
   Routes,
@@ -15,6 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} exact />
+        <Route path="/show/:id" element={<Show />} exact />
       </Routes>
       <Footer />
     </div>

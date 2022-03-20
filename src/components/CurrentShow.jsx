@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from "swiper"
 import 'swiper/css'
@@ -46,7 +47,7 @@ const CurrentShow = (props) => {
 					<SwiperSlide key={showlist.id}>
 						<div>
 							<div className="show-banner">
-								<img src={showlist.img} className='img-fluid' alt="" />
+							<Link to={`show/${showlist.id}`}>	<img src={showlist.img} className='img-fluid' alt="" /> </Link>
 							</div>
 							<div className="mt-3">
 								<h4>{showlist.name}</h4>

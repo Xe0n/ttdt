@@ -25,28 +25,28 @@ function Home() {
     const ShowList = {
         show: [
             {
-                id: 1,
+                id: 134,
                 img: 'http://театр-туймазы.рф/images/gallery/php0XYscO.jpg',
                 name: 'В круговороте берез...',
                 author: 'Роберт Миннуллин, Алтынай Бурина',
                 date: '29 Сентября 2015'
             },
             {
-                id: 2,
+                id: 134,
                 img: 'http://театр-туймазы.рф/images/gallery/phpade0bv.jpg',
                 name: 'Войду я в лес…',
                 author: 'Альфис Гаязов',
                 date: '05 Февраля 2013'
             },
             {
-                id: 3,
+                id: 134,
                 img: 'http://театр-туймазы.рф/images/gallery/phpDsfrKd.jpg',
                 name: 'Запах полыни',
                 author: 'Ильгиз Зайниев',
                 date: '20 Февраля 2015'
             },
             {
-                id: 4,
+                id: 134,
                 img: 'http://театр-туймазы.рф/images/gallery/phpXQbTJ3.jpg',
                 name: 'Курица',
                 author: 'Николай Коляда',
@@ -121,22 +121,13 @@ function Home() {
                     <NewsList items={news} />
                 </div>
             </div>
-            <div class="container-fluid mt-50">
+            <div class="container-fluid mt-50 mb-5">
                 <div class="row">
                     <h3>Наши друзья</h3>
                     <Partner items={Partners} />
                 </div>
             </div>
-            <div class="container-fluid mt-50">
-                <div className="row justify-content-between">
-                    <div className="col-md-10">
-                        <h3>Следите за нами в инстаграмме</h3>
-                    </div>
-                    <div className="col-md-2 text-end">
-                        <a href="">Перейти</a>
-                    </div>
-                </div>
-            </div>
+     
         </>
 
     )

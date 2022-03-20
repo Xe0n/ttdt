@@ -1,0 +1,22 @@
+#showSingle {
+    .swiper{
+        z-index: 1;
+    }
+    .swiper-button-prev, .swiper-button-next {
+        color: white;
+        background-color: $secondColor;
+        padding: 40px;
+     }
+     .swiper-button-prev {
+         right: 0;
+         left: unset;
+         top: unset;
+         bottom: 0px;
+     }
+     .swiper-button-next{
+         right: 0;
+         bottom: 80px;
+         top: unset;
+     }
+
+}
