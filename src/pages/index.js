@@ -1,2 +1,5 @@
 export { default as Home } from './Home'
 export { default as Show } from './Show'
+export { default as NewsSingle } from './NewsSingle'
+export { default as News } from './News'
+export { default as PersonSingle } from './PersonSingle'

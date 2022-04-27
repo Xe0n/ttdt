@@ -1,6 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay } from "swiper"
+import { Autoplay, Navigation } from "swiper"
 import 'swiper/css'
 
 const Partner = (props) => {
@@ -12,7 +12,7 @@ const Partner = (props) => {
 	})
 	return (
 		<>
-			<div class="row mt-5">
+			<div class="row mt-5" id="partner">
 				<Swiper
 					spaceBetween={150}
 					slidesPerView={1}
@@ -22,7 +22,7 @@ const Partner = (props) => {
 					className="mySwiper"
 					autoplay={{
 						delay: 2500,
-						disableOnInteraction: false
+						disableOnInteraction: true
 					}}
 					breakpoints={{
 
@@ -39,7 +39,7 @@ const Partner = (props) => {
 							spaceBetween: 50
 						}
 					}}
-					modules={[Autoplay]}
+					modules={[Autoplay, Navigation]}
 					onSwiper={(swiper) => console.log(swiper)}
 
 				>

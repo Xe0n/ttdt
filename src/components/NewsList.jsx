@@ -1,17 +1,20 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay } from "swiper"
+import { Link } from 'react-router-dom' 
+import { Autoplay, Navigation } from "swiper"
 import 'swiper/css'
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+const curLng = localStorage.getItem('lng')
 
 const NewsList = ({ items }) => {
 
 	const divStyle = (src) => ({
 		height: '500px',
 		backgroundImage: `url( ${src} )`,
-		backgroundSize: 'cover',
-		backgroundRepeat: 'no-repeat'
+		backgroundSize: 'contain',
+		backgroundRepeat: 'no-repeat',
+		backgroundPosition: 'center center'
 	})
 
 	return (
@@ -25,25 +28,29 @@ const NewsList = ({ items }) => {
 					loop={true}
 					className="mySwiper"
 					autoplay={{
-						delay: 2500,
-						disableOnInteraction: false
+						delay: 3500,
+						disableOnInteraction: true
 					}}
 					breakpoints={{
 
 						640: {
-							slidesPerView: 2,
+							slidesPerView: 1,
 							spaceBetween: 20
 						},
 						768: {
-							slidesPerView: 4,
-							spaceBetween: 40
+							slidesPerView: 1,
+							spaceBetween: 50
 						},
 						1024: {
-							slidesPerView: 4,
+							slidesPerView: 2,
 							spaceBetween: 50
+						},
+						1240: {
+							slidesPerView: 3,
+							spaceBetween: 40
 						}
 					}}
-					modules={[Autoplay]}
+					modules={[Autoplay, Navigation]}
 					onSwiper={(swiper) => console.log(swiper)}
 
 				>
@@ -51,11 +58,11 @@ const NewsList = ({ items }) => {
 					{items.map((obj) => (
 						<SwiperSlide key={obj.id}>
 							<div>
-								<div style={divStyle(obj.img)}>
-
-								</div>
+								<Link to={`news/${obj.id}`}>
+									<div style={divStyle(obj.img)}></div>
+								</Link>
 								<div className="mt-3">
-									<h6>{obj.title}</h6>
+									<Link to={`news/${obj.id}`}><h6>{curLng === 'ru' ? obj.title : obj.titleTAT !== "" ? obj.titleTAT : obj.title}</h6></Link>
 								</div>
 							</div>
 						</SwiperSlide>

@@ -1,0 +1,17 @@
+import React from 'react'
+import ContentLoader from 'react-content-loader'
+
+const News = props => (
+    <>
+    Загрузка новостей...
+   <ContentLoader height="500" width="100%" viewBox="0 0 350 150" >
+    <rect x="0" y="0" rx="4" ry="4" width="350" height="25" />
+    <rect x="0" y="50" rx="2" ry="2" width="350" height="150" />
+    <rect x="0" y="230" rx="2" ry="2" width="170" height="20" />
+    <rect x="0" y="230" rx="2" ry="2" width="170" height="20" />
+  </ContentLoader>
+
+  </>
+)
+
+export default News

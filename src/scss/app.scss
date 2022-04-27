@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'libs/normalize';
+@import 'libs/intitickets';
 @import 'fonts';
 @import 'breakpoints';
 @import 'mixins';
@@ -30,8 +31,30 @@ h1{
     }
 }
 h3{
-    font-weight: 300;
+    font-weight: 500;
 }
 .mt-50{
     margin-top: 100px;
+}
+.dropdown-item {
+    white-space: break-spaces;
+}
+#newsSingle {
+    .content img{
+        padding: 10px;
+        max-width: 100%;
+        @include sm{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+.artistList{
+    list-style-position: inside;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+}
+.tm{
+    color: red;
 }

@@ -1,4 +1,4 @@
-#showSingle {
+#showSingle, #person {
     .swiper{
         z-index: 1;
     }
@@ -17,6 +17,12 @@
          right: 0;
          bottom: 80px;
          top: unset;
+     }
+     @include sm {
+        .showText img {
+            width: 100%;
+            height: auto;
+        }
      }
 
 }

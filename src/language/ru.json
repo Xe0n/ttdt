@@ -1,0 +1,39 @@
+ {
+      "translation": {
+        "teatr_name": "Туймазинский государственный <br> татарский драматический театр",
+        "teatr_news": "Новости театра",
+        "teatr_show_Month": "В этом месяце",
+        "teatr_home_news": "Новости",
+        "teatr_frends": "Наши друзья",
+        "teatr_kassa": "Касса",
+        "teatr_priem": "Приемная",
+        "teatr_adress": "452750, Республика Башкортостан, г.Туймазы, Площадь Октября, 3",
+        "teatr_buy_ticket": "Купить билет",
+        "teatr_notion_spektakli_net": "Спектакли на следующий месяц появятся чуть-чуть позже",
+        "teatr_edro_spec": "Спектакли поставленные в рамках Федерального партийного проекта «Культура малой Родины»",
+
+
+        "teatr_footer_adress": "Адрес",
+        "teatr_footer_social": "Социальные сети",
+        "teatr_footer_phone_head": "Телефон для справок",
+        "teatr_footer_name": "ТУЙМАЗИНСКИЙ ГОСУДАРСТВЕННЫЙ ТАТАРСКИЙ ДРАМАТИЧЕСКИЙ ТЕАТР",
+        "teatr_home_social": "Наши соц.сети",
+        "teatr_home_vk": "Мы в Вконтакте",
+        "teatr_home_tlg": "Мы в Telegram",
+
+
+
+        "menu_look": "Смотрите",
+        "menu_read": "Читайте",
+        "menu_meet": "Знакомьтесь",
+        "menu_about": "О театре",
+        "menu_contact": "Контакты",
+        "menu_diff": "Разное",
+        "menu_adult": "Взрослые",
+        "menu_kids": "Детские",
+        "menu_ruk": "Персоналии",
+        "menu_artist": "Артисты",
+        "menu_history": "Архив"
+        
+      }
+}

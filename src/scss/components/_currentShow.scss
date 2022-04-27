@@ -1,5 +1,16 @@
-.show-banner{
-	img{
-		
+.curshow {
+	.show-banner{
+		text-align: center;
+	}
+	.show-banner img{
+		height: 70vh;
+		margin: 0 auto;
+
+		@include sm{
+			height: auto;
+		}		
+	}
+	.notice {
+		color: #807c7c;
 	}
 }

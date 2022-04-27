@@ -35,6 +35,28 @@
       }
   }  
 }
+.mobile-menu{
+    font-weight: 600;
+    padding: 0 0 0 10px;
+    li{
+        cursor: pointer;
+        padding: 10px 0 10px 0;
+        margin: 0;
+        line-height: 20px;
+        text-transform: none;
+    }
+    .sub-menu{
+        padding: 10px 20px 0 10px; 
+        font-weight: lighter;
+    }
+    a{
+        color: black;
+        text-transform:none;
+    }
+    b{
+        font-weight: 600;
+    }
+}
 .menu{
     position: relative;
     .nav-link, .link-font{
@@ -43,6 +65,10 @@
         text-transform: uppercase;
         text-decoration: underline;
         font-family: 'Overpass Mono', monospace;
+
+        @include lg {
+            font-size: 10px;
+        }
 
         &:hover{
             cursor: pointer;
