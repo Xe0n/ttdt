@@ -6,7 +6,7 @@ import "swiper/css/navigation"
 
 const divStyle = (src) => ({
     height: '500px',
-    backgroundImage: `url( http://xn----7sbbrnkv3apccm2i.xn--p1ai${src} )`,
+    backgroundImage: `url( http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai${src} )`,
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center'

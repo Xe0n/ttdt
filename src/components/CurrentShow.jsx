@@ -53,7 +53,7 @@ const CurrentShow = (props) => {
 					<SwiperSlide key={showlist.id}>
 						<div>
 							<div className="show-banner">
-							<Link to={`show/${showlist.id}`}>	<img src={`http://xn----7sbbrnkv3apccm2i.xn--p1ai${showlist.poster}`} className='img-fluid' alt="" /> </Link>
+							<Link to={`show/${showlist.id}`}>	<img src={`http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai${showlist.poster}`} className='img-fluid' alt="" /> </Link>
 							<div className="mt-3">
 								<h4>{curLng === "ru" ? showlist.title : showlist.titleTAT !== '' ? showlist.titleTAT : showlist.title}</h4>
 								{props.data === 'off' ? '' : <><div><h6>Дата и время</h6></div> <div>{showlist.showtime}</div></>}

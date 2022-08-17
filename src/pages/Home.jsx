@@ -41,31 +41,31 @@ function Home() {
         items: [
             {
                 id: 1,
-                img: 'http://театр-туймазы.рф/images/banners/work_russia.png'
+                img: 'http://апи.театр-туймазы.рф/images/banners/work_russia.png'
             },
             {
                 id: 2,
-                img: 'http://театр-туймазы.рф/images/banners/brand-01.svg'
+                img: 'http://апи.театр-туймазы.рф/images/banners/brand-01.svg'
             },
             {
                 id: 3,
-                img: 'http://театр-туймазы.рф/images/banner-133x133.png'
+                img: 'http://апи.театр-туймазы.рф/images/banner-133x133.png'
             },
             {
                 id: 4,
-                img: 'http://театр-туймазы.рф/images/banners/banner2020.png'
+                img: 'http://апи.театр-туймазы.рф/images/banners/banner2020.png'
             },
             {
                 id: 5,
-                img: 'http://театр-туймазы.рф/images/er_ogo.png'
+                img: 'http://апи.театр-туймазы.рф/images/er_ogo.png'
             },
             {
                 id: 6,
-                img: 'http://театр-туймазы.рф/images/banners/banner2020.png'
+                img: 'http://апи.театр-туймазы.рф/images/banners/banner2020.png'
             },
             {
                 id: 7,
-                img: 'http://театр-туймазы.рф/images/banners/kmrb.png'
+                img: 'http://апи.театр-туймазы.рф/images/banners/kmrb.png'
             }
         ]
     }
@@ -81,7 +81,7 @@ function Home() {
                     </div>
                     <div className="col-md-6 d-flex align-self-end ps-md-5 mt-3 mt-md-0">
                         <div className='text-center text-md-start'>
-                            <h3>{t('teatr_kassa')} 7-34-49</h3>
+                            <h3>{t('teatr_kassa')} 7-32-16</h3>
                             <h3>{t('teatr_priem')} 8 (34782) 7-36-08</h3>
                             <p>{t('teatr_adress')}</p>
                             <div className="mt-2 mb-5">
