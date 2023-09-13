@@ -14,8 +14,15 @@ const News = () => {
     const { t } = useTranslation()
     const curLng = localStorage.getItem('lng')
     
-
-    const text = (newsText) => { return {__html: newsText} }
+    function kitcut(text, limit) {
+        text = text.trim()
+        if (text.length <= limit) return text
+      
+        text = text.slice(0, limit)
+      
+        return `${text.trim()} ...`
+    }
+    const text = (newsText) => { return {__html: kitcut(newsText, 1000)} }
  
 
     const getData = async() => {
@@ -24,13 +31,17 @@ const News = () => {
         const slice = data.slice(offset, offset + perPage)
         const postData = slice.map(pd => <div key={pd.id} className="col-12 card">
             <div className="card-body">
-                    <h5 className="card-title">{ curLng === 'ru' ? pd.title : pd.titleTAT !== "" ? pd.titleTAT : pd.title }</h5>
+                    <Link to={`/news/${pd.id}`}>
+                        <h5 className="card-title">{ curLng === 'ru' ? pd.title : pd.titleTAT !== "" ? pd.titleTAT : pd.title }</h5>
+                    </Link>
                     <h6 className="card-subtitle mb-2 text-muted">{pd.date}</h6>
                 <div className="bodyPost card-text">
                     <p dangerouslySetInnerHTML={text(curLng === 'ru' ? pd.text : pd.textTAT !== "" ? pd.textTAT : pd.text)}>
                         
                     </p>
+             
                 </div>
+                <Link to={`/news/${pd.id}`}>Читать подробнее...</Link>
             </div>
         </div>)
         setData(postData)

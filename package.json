@@ -19,6 +19,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "react-vk": "^5.0.2",
+    "read-more-react": "^1.0.10",
     "sass": "^1.49.7",
     "swiper": "^8.0.6",
     "web-vitals": "^2.1.0"

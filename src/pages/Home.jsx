@@ -8,26 +8,31 @@ import VK, {Group } from "react-vk"
 
 import teatr from '../assets/img/teatr.png'
 import telegramBanner from '../assets/img/telegram.png'
-import repertuar from '../assets/img/repertuar-may.jpg'
+import repertuar from '../assets/img/repertuar_august.jpg'
+import qrFeedback from '../assets/img/qr_feedback.png'
+
 function Home() {
     const [news, setNews] = React.useState([])
     const [afisha, setAfisha] = React.useState([])
     const [edro, setEdro] = React.useState([])
+    const [rep, serRep] = React.useState()
     const [isLoading, setIsLoading] = React.useState(true)  
     const { t, i18n } = useTranslation()
 
     React.useEffect(() => {
         async function getData() {
             try {
-                const [newsResponse, afishaResponse, edroResponse] = await Promise.all([
+                const [newsResponse, afishaResponse, edroResponse, repertuarResponse] = await Promise.all([
                     axios.get('http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/newsHome'),
                     axios.get('http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/afisha'),
-                    axios.get('http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/edro')
+                    axios.get('http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/edro'),
+                    axios.get('http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/repertuar')
                 ])
                 setIsLoading(false)
                 setNews(newsResponse.data)
                 setAfisha(afishaResponse.data)
                 setEdro(edroResponse.data)
+                serRep(repertuarResponse.data)
 
             } catch (error) {
                 alert('Ошибка при запросе данных ;(')
@@ -87,7 +92,7 @@ function Home() {
                             <div className="mt-2 mb-5">
                                 <Button link="https://iframeab-pre5403.intickets.ru/events/"/>
                             </div>
-                            <img src={repertuar} className="img-fluid" alt="" />
+                            <img src={`http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/${rep}`} className="img-fluid" alt="" />
                         </div>
 
                     </div>
@@ -122,6 +127,14 @@ function Home() {
                     <div className=" col-lg-4 col-md-12 col-sm-12 ">
                     <h3 className='pb-3'>{t('teatr_home_tlg')}</h3>
                         <a href="https://t.me/tmzteatr"><img src={telegramBanner} alt="" className='img-fluid'/></a>
+                    </div>
+                </div>
+            </div>
+            <div className="container-fluid mt-50">
+                <div className="row">
+                    <div className="col-12">
+                        <h3>{t('teatr_qr_title')}</h3>
+                        <img src={qrFeedback} style={{maxWidth: "240px"}} alt="" />
                     </div>
                 </div>
             </div>

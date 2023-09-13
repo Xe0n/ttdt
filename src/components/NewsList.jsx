@@ -12,7 +12,7 @@ const NewsList = ({ items }) => {
 	const divStyle = (src) => ({
 		height: '500px',
 		backgroundImage: `url( ${src} )`,
-		backgroundSize: 'contain',
+		backgroundSize: 'cover',
 		backgroundRepeat: 'no-repeat',
 		backgroundPosition: 'center center'
 	})
@@ -59,7 +59,7 @@ const NewsList = ({ items }) => {
 						<SwiperSlide key={obj.id}>
 							<div>
 								<Link to={`news/${obj.id}`}>
-									<div style={divStyle(obj.img)}></div>
+									<div style={divStyle(obj.img.replace(/&quot;|amp;/g, ''))}></div>
 								</Link>
 								<div className="mt-3">
 									<Link to={`news/${obj.id}`}><h6>{curLng === 'ru' ? obj.title : obj.titleTAT !== "" ? obj.titleTAT : obj.title}</h6></Link>

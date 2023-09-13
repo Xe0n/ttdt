@@ -1,14 +1,13 @@
 import React from "react"
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
-import { propTypes } from "react-bootstrap/esm/Image"
+import { useParams, useNavigate } from 'react-router-dom'
 
 const NewsSingle = (props) => {
     const { id } = useParams()
     const [news, setNews] = React.useState([])
     const [isLoading, setIsLoading] = React.useState(true)
     const curLng = localStorage.getItem('lng')
-
+    const navigate = useNavigate()
     React.useEffect(() => {
         async function getData() {
             try {
@@ -41,10 +40,16 @@ const NewsSingle = (props) => {
         <div className='container-fluid' id="newsSingle">
             <div className="row slide-block">
                 <div className="col-12 my-5 py-5">
-                    <h1 className='pb-3'>
-                        { curLng === 'ru' ? news.title : news.titleTAT}
-                    </h1>
-                    <p className="content" dangerouslySetInnerHTML={text()}></p>
+                    {!isLoading ? (
+                        <>
+                           <p><a className="link-font link-back" onClick={() => navigate(-1)}>{'<Назад'}</a></p>
+                           <h1 className='pb-3'>
+                               { curLng === 'ru' ? news.title : news.titleTAT}
+                           </h1>
+                           <p className="content" dangerouslySetInnerHTML={text()}></p>
+                        </>
+                    ) : 'Загрузка...'}
+                 
                 </div>
             </div>
         </div>

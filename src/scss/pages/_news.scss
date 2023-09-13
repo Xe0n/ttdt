@@ -46,7 +46,15 @@
       a {
         text-decoration: underline;
       }
+ 
 }
 .content a{
   text-decoration: underline;
+}
+.link-back{
+  text-decoration: underline;
+  &:hover{
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
