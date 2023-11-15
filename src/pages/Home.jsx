@@ -19,26 +19,27 @@ function Home() {
     const [isLoading, setIsLoading] = React.useState(true)  
     const { t, i18n } = useTranslation()
 
-    React.useEffect(() => {
-        async function getData() {
-            try {
-                const [newsResponse, afishaResponse, edroResponse, repertuarResponse] = await Promise.all([
-                    axios.get('http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/newsHome'),
-                    axios.get('http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/afisha'),
-                    axios.get('http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/edro'),
-                    axios.get('http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/repertuar')
-                ])
-                setIsLoading(false)
-                setNews(newsResponse.data)
-                setAfisha(afishaResponse.data)
-                setEdro(edroResponse.data)
-                serRep(repertuarResponse.data)
+    async function getData() {
+        try {
+            const [newsResponse, afishaResponse, edroResponse, repertuarResponse] = await Promise.all([
+                axios.get('http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/newsHome'),
+                axios.get('http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/afisha'),
+                axios.get('http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/edro'),
+                axios.get('http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/repertuar')
+            ])
+            setIsLoading(false)
+            setNews(newsResponse.data)
+            setAfisha(afishaResponse.data)
+            setEdro(edroResponse.data)
+            serRep(repertuarResponse.data)
 
-            } catch (error) {
-                alert('Ошибка при запросе данных ;(')
-                console.error(error)
-            }
+        } catch (error) {
+            alert('Ошибка при запросе данных ;(')
+            console.error(error)
         }
+    }
+
+    React.useEffect(() => {
         getData()
     }, [])
    
@@ -92,7 +93,7 @@ function Home() {
                             <div className="mt-2 mb-5">
                                 <Button link="https://iframeab-pre5403.intickets.ru/events/"/>
                             </div>
-                            <img src={`http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/${rep}`} className="img-fluid" alt="" />
+                            <img src={`http://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/${rep}`} className="img-fluid" style={{maxHeight: '200px' }} alt="" />
                         </div>
 
                     </div>
