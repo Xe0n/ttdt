@@ -2,7 +2,7 @@
   "name": "dramteatr",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://xn----7sbbrnkv3apccm2i.xn--p1ai/",
+  "homepage": "https://xn----7sbbrnkv3apccm2i.xn--p1ai/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
