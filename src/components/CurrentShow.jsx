@@ -14,7 +14,7 @@ const CurrentShow = (props) => {
     return console.log(item.newcol);
   });
   return (
-    <div class="row mt-5 curshow">
+    <div className="row mt-5 curshow">
       {showlists.length > 0 ? (
         <Swiper
           spaceBetween={150}

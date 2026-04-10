@@ -153,9 +153,34 @@ function Home() {
       </div>
       <div className="container-fluid mt-50">
         <div className="row">
-          <div className="col-12">
-            <h3>{t("teatr_qr_title")}</h3>
-            <img src={qrFeedback} style={{ maxWidth: "240px" }} alt="" />
+          <div className="col-12 col-md-6 col-lg-3">
+            <img src={qrFeedback} style={{ maxWidth: "220px" }} alt="" />
+          </div>
+          <div className="col-12 col-md-6 col-lg-3">
+            {" "}
+            <p>{t("teatr_qr_title")}</p>
+          </div>
+          <div className="col-12 col-md-6 col-lg-3">
+            <img
+              src="http://апи.театр-туймазы.рф/images/gallery/phpgKylhv.jpg"
+              style={{ maxWidth: "220px" }}
+              alt=""
+            />
+          </div>
+          <div className="col-12 col-md-6 col-lg-3">
+            <p>
+              Дорогие друзья! Просим пройти онлайн-опрос: "Удовлетворенность
+              граждан работой государственных и муниципальных организаций
+              культуры, искусства и народного творчества".
+            </p>
+            <a
+              href="https://forms.mkrf.ru/e/2579/xTPLeBU7/?ap_orgcode=047806"
+              target="_blank"
+              rel="noreferrer"
+              className="nav-link"
+            >
+              Пройти опрос
+            </a>
           </div>
         </div>
       </div>
