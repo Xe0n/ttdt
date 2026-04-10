@@ -9,10 +9,10 @@ const CurrentShow = (props) => {
   const { t, i18n } = useTranslation();
   const showlists = props.items;
   const curLng = localStorage.getItem("lng");
-  const show = showlists.map((item) => {
-    item.newcol = item.showtime;
-    return console.log(item.newcol);
-  });
+  // const show = showlists.map((item) => {
+  //   item.newcol = item.showtime;
+  //   return console.log(item.newcol);
+  // });
   return (
     <div className="row mt-5 curshow">
       {showlists.length > 0 ? (

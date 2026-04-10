@@ -18,17 +18,18 @@ function Home() {
   const [rep, serRep] = React.useState();
   const [isLoading, setIsLoading] = React.useState(true);
   const { t, i18n } = useTranslation();
-
+//Если нужно будет вернуть афишу на главную страницу
+// axios.get(
+//   "https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/afisha"
+// ),
   async function getData() {
     try {
-      const [newsResponse, afishaResponse, edroResponse, repertuarResponse] =
+      const [newsResponse, edroResponse, repertuarResponse] =
         await Promise.all([
           axios.get(
             "https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/newsHome"
           ),
-          axios.get(
-            "https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/afisha"
-          ),
+
           axios.get(
             "https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/edro"
           ),
@@ -38,7 +39,7 @@ function Home() {
         ]);
       setIsLoading(false);
       setNews(newsResponse.data);
-      setAfisha(afishaResponse.data);
+      // setAfisha(afishaResponse.data);
       setEdro(edroResponse.data);
       serRep(repertuarResponse.data);
     } catch (error) {
@@ -114,12 +115,12 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="container-fluid mt-50">
+      {/* <div className="container-fluid mt-50">
         <div className="row">
           <h3>{t("teatr_show_Month")}</h3>
           <CurrentShow items={afisha} />
         </div>
-      </div>
+      </div> */}
       <div className="container-fluid mt-50">
         <div className="row">
           <h3>{t("teatr_home_news")}</h3>
