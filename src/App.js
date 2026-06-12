@@ -19,7 +19,7 @@ function App() {
       try {
         const [MenuResponse] = await Promise.all([
           axios.get(
-            `https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/menu`
+            `/api/action/menu`
           ),
         ]);
         setIsLoading(false);

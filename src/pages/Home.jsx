@@ -26,16 +26,10 @@ function Home() {
     try {
       const [newsResponse, edroResponse, repertuarResponse] =
         await Promise.all([
-          axios.get(
-            "https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/newsHome"
-          ),
+          axios.get("/api/action/newsHome"),
 
-          axios.get(
-            "https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/edro"
-          ),
-          axios.get(
-            "https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/repertuar"
-          ),
+          axios.get("/api/action/edro"),
+          axios.get("/api/action/repertuar"),
         ]);
       setIsLoading(false);
       setNews(newsResponse.data);
@@ -106,7 +100,7 @@ function Home() {
                 <Button link="https://iframeab-pre5403.intickets.ru/events/" />
               </div>
               <img
-                src={`https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/${rep}`}
+                src={rep ? `https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/${rep}` : ''}
                 className="img-fluid"
                 style={{ maxHeight: "200px" }}
                 alt=""

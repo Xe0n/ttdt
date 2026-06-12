@@ -28,7 +28,7 @@ const News = () => {
 
   const getData = async () => {
     const res = await axios.get(
-      `https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/news`
+      `/api/action/news`
     );
     const data = res.data;
     const slice = data.slice(offset, offset + perPage);

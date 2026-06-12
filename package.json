@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://xn----7sbbrnkv3apccm2i.xn--p1ai/",
+  "proxy": "https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",

@@ -14,7 +14,7 @@ const PersonSingle = () => {
       try {
         const [PersonResponse] = await Promise.all([
           axios.get(
-            `https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/personSingle?id=${id}`
+            `/api/action/personSingle?id=${id}`
           ),
         ]);
         setIsLoading(false);

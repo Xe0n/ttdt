@@ -16,12 +16,12 @@ const Show = () => {
       try {
         const [GalleryResponse] = await Promise.all([
           axios.get(
-            `https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/singleShowGallery?id=${id}`
+            `/api/action/singleShowGallery?id=${id}`
           ),
         ]);
         const [ShowResponse] = await Promise.all([
           axios.get(
-            `https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/singleShow?id=${id}`
+            `/api/action/singleShow?id=${id}`
           ),
         ]);
         setIsLoading(true);

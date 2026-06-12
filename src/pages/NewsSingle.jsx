@@ -13,7 +13,7 @@ const NewsSingle = (props) => {
       try {
         const [NewsResponse] = await Promise.all([
           axios.get(
-            `https://xn--80aqu.xn----7sbbrnkv3apccm2i.xn--p1ai/api/action/newsSingle?id=${id}`
+            `/api/action/newsSingle?id=${id}`
           ),
         ]);
         setIsLoading(false);
