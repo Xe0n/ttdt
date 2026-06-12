@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import edinstvoLogo from "../assets/img/2026-edinstvo.png";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -95,13 +96,13 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-2">
             <ul>
               <li>{t("teatr_footer_phone_head")}</li>
               <li>7-36-08, 7-22-67 </li>
             </ul>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-2">
             <ul>
               <li>{t("teatr_footer_adress")}</li>
               <li>{t("teatr_adress")}</li>
@@ -112,6 +113,16 @@ const Footer = () => {
                 <a href="https://t.me/tmzteatr">Telegram</a>
               </li>
             </ul>
+          </div>
+          <div className="col-md-2 d-flex justify-content-center justify-content-md-end mt-4 mt-md-0">
+            <Link to="/news/2206">
+              <img
+                src={edinstvoLogo}
+                alt="Год единства народов России"
+                style={{ width: "175px", height: "auto" }}
+                className="img-fluid"
+              />
+            </Link>
           </div>
         </div>
         <div className="row text-center">

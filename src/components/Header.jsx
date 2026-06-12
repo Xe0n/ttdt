@@ -307,6 +307,9 @@ function Header({ menu, isLoading }) {
                     >
                       Анкета-опросник
                     </NavDropdown.Item>
+                    <NavDropdown.Item href="/news/2206" className="text-break">
+                      Год единства народов России
+                    </NavDropdown.Item>
                     <NavDropdown.Item href="/news/117" className="text-break">
                       Афиша
                     </NavDropdown.Item>
@@ -448,6 +451,14 @@ function Header({ menu, isLoading }) {
                               className="text-break"
                             >
                               Анкета-опросник
+                            </NavDropdown.Item>
+                          </li>
+                          <li>
+                            <NavDropdown.Item
+                              href="/news/2206"
+                              className="text-break"
+                            >
+                              Год единства народов России
                             </NavDropdown.Item>
                           </li>
                           <li>
