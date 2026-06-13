@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import api from "../api";
 import { useParams, useNavigate } from "react-router-dom";
 
 const NewsSingle = (props) => {
@@ -12,7 +12,7 @@ const NewsSingle = (props) => {
     async function getData() {
       try {
         const [NewsResponse] = await Promise.all([
-          axios.get(
+          api.get(
             `/api/action/newsSingle?id=${id}`
           ),
         ]);

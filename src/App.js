@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import { Header, Footer } from "./components";
 import { Home, Show, NewsSingle, PersonSingle, News } from "./pages";
-import axios from "axios";
+import api from "./api";
 import {
   Route,
   Routes,
@@ -18,7 +18,7 @@ function App() {
     async function getData() {
       try {
         const [MenuResponse] = await Promise.all([
-          axios.get(
+          api.get(
             `/api/action/menu`
           ),
         ]);

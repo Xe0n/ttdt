@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReactPaginate from "react-paginate";
-import axios from "axios";
+import api from "../api";
 import { NewsLoadingBlock } from "../components";
 import { useTranslation } from "react-i18next";
 
@@ -27,7 +27,7 @@ const News = () => {
   };
 
   const getData = async () => {
-    const res = await axios.get(
+    const res = await api.get(
       `/api/action/news`
     );
     const data = res.data;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, CurrentShow, NewsList, Partner } from "../components";
 import { Navigation, Pagination } from "swiper";
-import axios from "axios";
+import api from "../api";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import VK, { Group } from "react-vk";
@@ -26,10 +26,10 @@ function Home() {
     try {
       const [newsResponse, edroResponse, repertuarResponse] =
         await Promise.all([
-          axios.get("/api/action/newsHome"),
+          api.get("/api/action/newsHome"),
 
-          axios.get("/api/action/edro"),
-          axios.get("/api/action/repertuar"),
+          api.get("/api/action/edro"),
+          api.get("/api/action/repertuar"),
         ]);
       setIsLoading(false);
       setNews(newsResponse.data);

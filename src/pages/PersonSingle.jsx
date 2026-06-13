@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import api from "../api";
 import { SlideShow } from "../components";
 import { Link, useParams } from "react-router-dom";
 
@@ -13,7 +13,7 @@ const PersonSingle = () => {
     async function getData() {
       try {
         const [PersonResponse] = await Promise.all([
-          axios.get(
+          api.get(
             `/api/action/personSingle?id=${id}`
           ),
         ]);

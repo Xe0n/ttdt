@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import api from "../api";
 import { useParams } from "react-router-dom";
 import { SlideShow, GalleryLoadingBlock } from "../components";
 import { useTranslation } from "react-i18next";
@@ -15,12 +15,12 @@ const Show = () => {
     async function getData() {
       try {
         const [GalleryResponse] = await Promise.all([
-          axios.get(
+          api.get(
             `/api/action/singleShowGallery?id=${id}`
           ),
         ]);
         const [ShowResponse] = await Promise.all([
-          axios.get(
+          api.get(
             `/api/action/singleShow?id=${id}`
           ),
         ]);
